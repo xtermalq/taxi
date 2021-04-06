@@ -1,0 +1,101 @@
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form-control {
+  background-color: $background-color;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  max-width: 95%;
+  > div {
+    display: flex;
+  }
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    min-width: 50px;
+    width: 50px;
+    background-color: $main-color;
+    color: $white-color;
+    cursor: pointer;
+  }
+  input {
+    width: 99%;
+    border: none;
+    background-color: transparent;
+    padding: 0 1rem;
+    font: {
+      size: 0.7rem;
+    }
+    &::placeholder {
+      color: $placeholder-color;
+    }
+    &.file {
+      display: none;
+    }
+  }
+}
+
+.container--contact {
+  width: 32%;
+}
+
+.form-control-checkbox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    #isRegulations {
+      background-color: $white-color;
+    }
+  }
+  label {
+    cursor: pointer;
+  }
+  .label-desc {
+    display: block;
+    width: 95%;
+    padding-left: 10px;
+    font: {
+      size: 0.7rem;
+    }
+  }
+
+  .checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $placeholder-color;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    color: $main-color;
+    cursor: pointer;
+  }
+  input {
+    display: none;
+  }
+}
+
+textarea {
+  resize: none;
+  height: 10vh;
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  padding: 0 1rem;
+  font-size: 0.7rem;
+}

@@ -1,0 +1,213 @@
+header {
+  height: 69px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1 {
+    display: block;
+    width: auto;
+
+    img {
+      padding-top: 10px;
+      display: block;
+      height: 90px;
+    }
+  }
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 43%;
+
+    .navigation {
+      &__list {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+      }
+      &__item {
+        a {
+          color: $white-color;
+          font-weight: 700;
+          transition: 0.4s;
+          text: {
+            decoration: none;
+            transform: uppercase;
+          }
+          &:hover {
+            color: $main-color;
+            transition: 0.4s;
+          }
+        }
+      }
+    }
+  }
+  .hamburger {
+    display: none;
+  }
+}
+
+@media only screen and(max-width: 896px) {
+  header {
+    .container {
+      justify-content: center;
+    }
+    h1 {
+      text-align: center;
+      img {
+        height: 68px;
+      }
+    }
+    nav {
+      width: 0;
+      .navigation {
+        &__list {
+          background-color: $white-color;
+          position: fixed;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding-top: 30px;
+          height: 100vh;
+          width: 250px;
+          top: 0;
+          left: -250px;
+          transition: 0.4s;
+          z-index: 999;
+        }
+        &__item {
+          padding: 20px 0;
+          a {
+            color: $black-color;
+            font: {
+              size: 1rem;
+            }
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
+      }
+      .nav--active {
+        left: 0;
+        transition: 0.4s;
+      }
+    }
+    .hamburger {
+      display: block;
+      position: fixed;
+      left: 23px;
+      top: 23px;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0;
+      z-index: 1;
+      &--active {
+        transform: translateX(250px);
+      }
+      &__box {
+        width: 35px;
+        height: 24px;
+        display: inline-block;
+        position: relative;
+      }
+      &__inner {
+        @include hamburger-line;
+
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        // Nie słyszałem o użyciu dwóch timingów
+        transition: background-color 0.1s ease-in-out; // sprawdzic
+        &::before,
+        &::after {
+          @include hamburger-line;
+
+          content: '';
+          left: 0;
+          transition: transform 0.2s ease-in-out;
+        }
+        &::before {
+          top: -10px;
+        }
+        &::after {
+          top: 10px;
+        }
+      }
+    }
+    .hamburger,
+    .navigation {
+      transition: transform 0.3s ease-in-out;
+    }
+    .hamburger--active {
+      .hamburger__inner {
+        background-color: transparent;
+        &::before {
+          transform: translateY(10px) rotate(45deg);
+        }
+        &::after {
+          transform: translateY(-10px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .container--contact {
+    width: 41%;
+  }
+
+  // main {
+  //   .button--mobile {
+  //     display: inline;
+  //     a {
+  //       padding: 20px;
+  //       text-decoration: none;
+  //       color: $border-color;
+  //     }
+  //   }
+  //   .button--desktop {
+  //     display: none;
+  //   }
+  // }
+  main {
+    .button {
+      &--desktop {
+        display: none;
+      }
+      &--mobile {
+        display: block;
+        height: 51px;
+        width: 200px;
+        a {
+          text-decoration: none;
+          color: $border-color;
+          height: 100%;
+          width: 100%;
+          display: block;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 0.4s;
+          &:hover {
+            color: $main-color;
+            transition: 0.4s;
+          }
+        }
+      }
+    }
+  }
+  // .main--height {
+  //   height: auto;
+  // }
+}
+
+@media only screen and(max-width: 768px ) {
+  header {
+    h1 {
+      font-size: 1.2rem;
+    }
+  }
+}
