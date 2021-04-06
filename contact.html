@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <script src="https://kit.fontawesome.com/4b459a6900.js" crossorigin="anonymous"></script>
+    <meta name="theme-color" content="#1874a3" />
+    <title>Kontakt</title>
+  </head>
+  <body>
+    <div class="background-image"></div>
+    <header>
+      <div class="container">
+        <h1><img src="img/logo.svg" alt="" /></h1>
+        <nav>
+          <button class="hamburger">
+            <span class="hamburger__box">
+              <span class="hamburger__inner"></span>
+            </span>
+          </button>
+
+          <ul class="navigation__list">
+            <li class="navigation__item"><a href="index.html">home</a></li>
+            <li class="navigation__item"><a href="prices.html">cennik</a></li>
+            <li class="navigation__item"><a href="transfer.html">transfer</a></li>
+            <li class="navigation__item"><a href="contact.html">kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class=" main--height scroll ">
+      <div class="container container--contact">
+        <h2>Kontakt</h2>
+        <form>
+          <div class="form-control">
+            <div>
+              <label for="firstName"><i class="fas fa-user"></i> </label
+              ><input name="firstName" id="firstName" type="firstName" placeholder="Imię" value="" />
+            </div>
+          </div>
+          <div class="form-control">
+            <div>
+              <label for="email"><i class="fas fa-envelope"></i></label
+              ><input name="email" id="email" type="email" placeholder="Email" value="" />
+            </div>
+          </div>
+          <div class="form-control">
+            <div>
+              <label for="phone"><i class="fas fa-phone-alt"></i></label
+              ><input name="phone" id="phone" type="text" placeholder="Numer telefonu" value="" />
+            </div>
+          </div>
+          <div class="form-control">
+            <textarea placeholder="Treść wiadomości"></textarea>
+          </div>
+          <div class="form-control-checkbox">
+            <div>
+              <label class="checkbox" id="isRegulations" for="isRegulations"><i id="myI"></i></label
+              ><input name="isRegulations" type="checkbox" value="" /><label class="label-desc" for="isRegulations"
+                >Akceptuję <a href="regulations.html">regulamin</a></label
+              >
+            </div>
+          </div>
+          <div class="button-container">
+            <button type="submit" class="button">Wyślij</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer--contact">
+      <div class="container">
+        <p>Copyrights &copy; <a href="#">coding tree</a> | <span id="date"></span></p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="nav.js"></script>
+  </body>
+</html>
